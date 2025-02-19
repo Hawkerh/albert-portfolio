@@ -6,11 +6,6 @@ import parisSaclay from "../assets/iut.jpg";
 import { Button } from "@/components/ui/button";
 import { Download, MailQuestion } from 'lucide-react';
 import { Badge } from "@/components/ui/badge"
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card"
 
 import {
   Accordion,
@@ -18,6 +13,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../components/ui/accordion"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 
 
@@ -42,81 +38,76 @@ export default function Home() {
 
         {/* Boutons d'action */}
         <div className=" w-fit">
-          <Button className="mr-4" ><MailQuestion />Me contacter</Button>
+          <Button className="mr-4" asChild ><a href="mailto:cissealbert.d@icloud.com"><MailQuestion />Me contacter</a></Button>
           <Button variant="outline" asChild><a href={cv} download rel="noopener noreferrer"><Download /> Télécharger CV</a></Button>
         </div>
 
-{/* Accordéons avec catégories */}
-<div className="mt-3 max-w-md">
-  <Accordion type="single" collapsible>  
+        {/* Accordéons avec catégories */}
+        <div className="mt-3 ">
+          <Accordion type="single" collapsible>
 
-    {/* Scolarité */}
-    <AccordionItem value="scolarite">
-      <AccordionTrigger>Scolarité</AccordionTrigger>
-      <AccordionContent className="flex flex-col gap-2">
-        {/* UQAC */}
-        <HoverCard>
-          <HoverCardTrigger className="hover:underline cursor-pointer hover:text-gray-800 font-semibold">
-            • Université du Québec à Chicoutimi (UQAC)
-          </HoverCardTrigger>
-          <HoverCardContent>
-            <div className="flex items-center gap-4">
-              <img src={uqac} alt="UQAC Logo" className="w-16 h-16" />
-              <div>
-                <h3 className="font-bold text-lg">Université du Québec à Chicoutimi (UQAC)</h3>
-                <p className="text-sm text-gray-500">2022 - 2025</p>
-              </div>
-            </div>
-            <div className="mt-3">
-              <p className="font-semibold">Diplôme : Baccalauréat en informatique</p>
-              <ul className="list-disc list-inside text-sm text-gray-600 mt-2">
-                <li>Gestion de projets avec Azure DevOps</li>
-                <li>Développement web et mobile</li>
-                <li>Création d'API REST</li>
-                <li>Administration de bases de données</li>
-              </ul>
-            </div>
-          </HoverCardContent>
-        </HoverCard>
+            <AccordionItem value="scolarite">
+              <AccordionTrigger>Scolarité</AccordionTrigger>
+              <AccordionContent className="flex flex-col lg:flex-row gap-2">
+              {/* UQAC */}
+              <Card className="shadow-lg rounded-lg">
+                <CardHeader className="flex flex-row gap-4">
+                <img src={uqac} alt="UQAC Logo" className="w-16 h-16" />
+                <div>
+                  <CardTitle>Université du Québec à Chicoutimi</CardTitle>
+                  <CardDescription>2022 - 2025</CardDescription>
+                </div>
+                </CardHeader>
+                <CardContent>
+                <p className="font-semibold">Diplôme : Baccalauréat en informatique</p>
+                <ul className="list-disc list-inside text-sm text-gray-600 mt-2">
+                  <li>Environnement de déploiement des applications (Azure DevOps)</li>
+                  <li>Gestion production dans l'industrie du numérique</li>
+                  <li>Bases de données avancées</li>
+                  <li>Conception et programmation de sites Web</li>
+                  <li>Apprentissage machine pour la science des données</li>
+                  <li>Informatique mobile</li>
+                  <li>Technologies Web avancées</li>
+                  <li>Algorithmique</li>
+                </ul>
+                </CardContent>
+              </Card>
 
-        {/* Université Paris-Saclay */}
-        <HoverCard>
-          <HoverCardTrigger className="hover:underline cursor-pointer hover:text-gray-800 font-semibold">
-            • Université Paris-Saclay - IUT d'Orsay
-          </HoverCardTrigger>
-          <HoverCardContent>
-            <div className="flex items-center gap-4">
-              <img src={parisSaclay} alt="Paris-Saclay Logo" className="w-16 h-16" />
-              <div>
-                <h3 className="font-bold text-lg">Université Paris-Saclay - IUT d'Orsay</h3>
-                <p className="text-sm text-gray-500">2020 - 2022</p>
-              </div>
-            </div>
-            <div className="mt-3">
-              <p className="font-semibold">Diplôme : Bachelor Universitaire de Technologie en informatique</p>
-              <ul className="list-disc list-inside text-sm text-gray-600 mt-2">
-                <li>Programmation en C, Python, Java</li>
-                <li>Développement web (HTML, CSS, JS)</li>
-                <li>Gestion de conteneurs avec Docker</li>
-                <li>Utilisation de GitLab pour CI/CD</li>
-              </ul>
-            </div>
-          </HoverCardContent>
-        </HoverCard>
-      </AccordionContent>
-    </AccordionItem>
+              {/* Université Paris-Saclay */}
+              <Card className="shadow-lg rounded-lg">
+                <CardHeader className="flex flex-row gap-4">
+                <img src={parisSaclay} alt="Paris-Saclay Logo" className="w-16 h-16" />
+                <div>
+                  <CardTitle>Université Paris-Saclay - IUT d'Orsay</CardTitle>
+                  <CardDescription>2020 - 2022</CardDescription>
+                </div>
+                </CardHeader>
+                <CardContent>
+                <p className="font-semibold">Diplôme : Bachelor Universitaire de Technologie en informatique</p>
+                <ul className="list-disc list-inside text-sm text-gray-600 mt-2">
+                  <li>Programmation orientée objet</li>
+                  <li>Développement web (HTML, CSS, JS, PHP)</li>
+                  <li>Utilisation de GitLab pour CI/CD</li>
+                  <li>Gestion de projet (méthodologies Agile/Scrum)</li>
+                  <li>Création et administration de bases de données (Oracle, MySQL)</li>
+                  <li>Administration système et réseaux (Linux, virtualisation, TCP/IP)</li>
+                </ul>
+                </CardContent>
+              </Card>
+              </AccordionContent>
+            </AccordionItem>
 
-    <AccordionItem value="passion">
-      <AccordionTrigger>Passions</AccordionTrigger>
-      <AccordionContent className="flex flex-wrap gap-2">
-        <Badge className="bg-red-500 text-white">La photographie</Badge>
-        <Badge className="bg-orange-500 text-white">Le cinéma</Badge>
-        <Badge className="bg-purple-500 text-white">La guitare</Badge>
-        <Badge className="bg-indigo-500 text-white">Le basketball</Badge>
-      </AccordionContent>
-    </AccordionItem>
-  </Accordion>
-</div>
+            <AccordionItem value="passion">
+              <AccordionTrigger>Passions</AccordionTrigger>
+              <AccordionContent className="flex flex-wrap gap-2">
+                <Badge className="bg-red-500 text-white">La photographie</Badge>
+                <Badge className="bg-orange-500 text-white">Le cinéma</Badge>
+                <Badge className="bg-purple-500 text-white">La guitare</Badge>
+                <Badge className="bg-indigo-500 text-white">Le basketball</Badge>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
 
       </div>
 
