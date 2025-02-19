@@ -13,8 +13,8 @@ const PortfolioPage = () => {
         <Button asChild variant="ghost"  className="text-base"><a href="#Experiences">Expériences</a></Button>
       </div>
       <div className=" hidden lg:flex absolute left-[98%] -translate-x-full">
-        <Button asChild className="mr-3"><a href="https://www.linkedin.com/in/albert-cisse-18b602284/"><Github />Mon Github </a></Button>
-        <Button asChild variant="ghost"><a href="https://github.com/Hawkerh"><Linkedin />Linkdin</a></Button>
+        <Button asChild className="mr-3"><a href="https://github.com/Hawkerh"><Github />Mon Github </a></Button>
+        <Button asChild variant="ghost"><a href="https://www.linkedin.com/in/albert-cisse-18b602284/</Button>"><Linkedin />Linkdin</a></Button>
       </div>
     </div>
     <div className=" flex lg:hidden shadow rounded bg-white space-x-3 h-fit py-2 px-4 fixed top-[98%] left-[95%] -translate-y-full -translate-x-full z-50 ring-1 ring-gray-200">
